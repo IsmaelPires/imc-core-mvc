@@ -1,0 +1,86 @@
+﻿@{
+    ViewData["Title"] = "Cálculo de IMC";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <div class="form">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Nome" aria-label="Nome" id="nome">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Exemplo: 75" aria-label="Peso" id="peso">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Exemplo: 1.77" aria-label="Altura" id="altura">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row actions">
+        <div class="col-md-12">
+            <button class="btn btn-dark mr-2" id="btn-calcular-imc">Calcular</button>
+            <button class="btn btn-primary" id="btn-limpar">Limpar campos</button>
+        </div>
+    </div>
+    <div class="resultado mt-2 text-center"></div>
+    <div class="tabela text-center">
+        <div class="tabela-imc mt-2" style="display:none;">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td colspan="3"><b>Veja a interpretação do IMC</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-calc-blue">
+                        <td>IMC</td>
+                        <td>Classificação</td>
+                        <td style="text-align: center">Obesidade <small>(grau)</small></td>
+                    </tr>
+
+                    <tr id="result_calc_0">
+                        <td>Menor que 18,5</td>
+                        <td>Magreza</td>
+                        <td style="text-align: center">0</td>
+                    </tr>
+
+                    <tr id="result_calc_1">
+                        <td>Entre 18,5 e 24,9</td>
+                        <td>Normal</td>
+                        <td style="text-align: center">0</td>
+                    </tr>
+
+                    <tr id="result_calc_2">
+                        <td>Entre 25,0 e 29,9</td>
+                        <td>Sobrepeso</td>
+                        <td style="text-align: center">I</td>
+                    </tr>
+
+                    <tr id="result_calc_3">
+                        <td>Entre 30,0 e 39,9</td>
+                        <td>Obesidade</td>
+                        <td style="text-align: center">II</td>
+                    </tr>
+
+                    <tr id="result_calc_4">
+                        <td>Maior que 40,0</td>
+                        <td>Obesidade Grave</td>
+                        <td style="text-align: center">III</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="~/js/site.js"></script>
+<script type="text/javascript" src="~/js/cadastro-ui.js"></script>
+<style>
+    .campo-obg {
+        border-color: red;
+    }
+</style>
